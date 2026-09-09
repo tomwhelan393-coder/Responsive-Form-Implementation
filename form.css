@@ -1,0 +1,14 @@
+header {
+    background-color: #416f9c;
+    color: rgb(255, 255, 255);
+}
+.image {
+    max-width: 160px;
+}
+.navbar-nav .nav-link{
+    color: white;
+}
+
+h1{
+    font-size: 50px;
+}
