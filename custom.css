@@ -1,19 +1,29 @@
-header {
+/*
+    Styling for header
+*/
+header{
     background-color: #416f9c;
     color: rgb(255, 255, 255);
 }
-
 .image {
     max-width: 160px;
-}
-
-.navbar-nav .nav-link {
-    color: white;
 }
 
 h1 {
     font-size: 50px;
 }
+
+
+/*
+    Styling for navbar
+*/
+.navbar-nav .nav-link {
+    color: white;
+}
+
+/*
+    Styling for form elements
+*/
 
 textarea {
     width: 100%;
@@ -22,4 +32,32 @@ textarea {
 
 .submit{
     margin-top: 20px;
+}
+
+.announcement{
+    padding: 30px;
+}
+
+.EduMax{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/*
+    Styling for footer
+*/
+
+.form{
+    background-color: rgb(145, 199, 233);
+    margin: 20px;
+}
+
+.footer-image{
+    max-width: 150px;
+}
+
+footer{
+    background-color: #416f9c;
+    color: rgb(255, 255, 255);
 }

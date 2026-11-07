@@ -13,6 +13,7 @@
 <body>
     <header>
         <div class="container">
+            <!-- EduMax Header -->
             <div class="row">
                 <div class="col-4">
                     <img src="EduMax_logo.png" alt="EduMax logo" class="image img-fluid p-2">
@@ -26,7 +27,8 @@
             </div>
         </div>
     </header>
-    <nav class="navbar navbar-expand-lg p-2 bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg p-2 bg-dark" data-bs-theme="dark" aria-label="Main navigation">
+        <!-- EduMax Navbar -->
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,105 +37,153 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link">Home</a>
-                    <a class="nav-link">Module Catologue</a>
+                    <a class="nav-link">Module Catalogue</a>
                     <a class="nav-link">Learning Events</a>
                     <a class="nav-link ">Membership</a>
                     <a class="nav-link ">News</a>
-                    <a class="nav-link" aria-current="page">Announcments</a>
+                    <a class="nav-link" aria-current="page">Announcements</a>
                     <a class="nav-link">Security</a>
                 </div>
             </div>
             <form class="d-flex" role="search" data-bs-theme="light">
+                <!-- Search box for navbar-->
                 <input class="form-control me-2 p-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-secondary" type="submit">Search</button>
+                <button class="btn btn-outline-info" type="submit">Search</button>
             </form>
+        </div>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <main>
         <div class="container">
-            <h1>Edit Announcment</h1>
-            <form>
+            <!-- Announcement form -->
+            <form action="https://students.open.ac.uk/mct/tm252/reflect/reflect.php" class="p-5 form" method="post">
+                <h1 class="announcement text-center ">Edit Announcement</h1>
+                <input type="hidden" name="item_ID" value="30001000-5000-654321fedcba">
                 <div class="row mb-3">
-                    <label for="inputSendersName" class="col-sm-2 col-form-label">Senders Name</label>
-                    <div class="col">
-                        <input type="text" class="form-control" id="inputSendersName" placeholder="First Name"
-                            aria-label="First Name" value="Jane">
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" id="inputSendersName" placeholder="Last Name"
-                            aria-label="Last Name" value="Couch">
+                    <!-- First and last name form fields-->
+                    <label for="inputFirstName" class="col-sm-3 col-form-label fw-bold fs-3">First Name</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name"
+                            aria-label="First Name" value="Jane" name="First name">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="selectRole" class="col-sm-2 col-form-label">Senders Role</label>
-                    <div class="col">
-                        <select id="selectRole" class="form-select" aria-label="Role Selector">
+                    <label for="inputLastName" class="col-sm-3 col-form-label fw-bold fs-3">Last Name</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name"
+                            aria-label="Last Name" value="Couch" name="Last Name">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="selectRole" class="col-sm-3 col-form-label fw-bold fs-3">Senders Role</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <!-- Role selection form field-->
+                        <select id="selectRole" class="form-select" aria-label="Role Selector" name="Role">
                             <option>Select Role</option>
-                            <option value="1">Module lead</option>
-                            <option value="2" selected>Administrator</option>
-                            <option value="3">Module assistant</option>
+                            <option value="Module lead">Module lead</option>
+                            <option value="Administrator" selected>Administrator</option>
+                            <option value="Module assistant">Module assistant</option>
                         </select>
-                        <span class="form-text">
+                        <span class="form-text fs-5 fw-bold">
+                            <!-- The three options from role selector -->
                             (module lead, administrator, module assistant)
                         </span>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="inputSubjectLine" class="col-sm-2 col-form-label">Subject Line</label>
-                    <div class="col">
+                    <label for="inputSubjectLine" class="col-sm-3 col-form-label fw-bold fs-3">Subject Line</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <!-- Subject line form field-->
                         <input type="text" id="inputSubjectLine" class="form-control"
-                            placeholder="e.g revision time table" aria-label="Subject Line" value="Exam Revision timetable ">
-                        <span class="form-text">
-                            (Must be no longer than 5 words)
+                            placeholder="e.g revision time table" aria-label="Subject Line"
+                            value="Exam Revision timetable " name="Subject Line">
+                        <span class="form-text fs-5 fw-bold">
+                            <!-- Shows user that they should only input maximum of 5 words-->
+                            (Maximum of 5 words)
                         </span>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="subjectContent" class="col-sm-2 col-form-label">Content</label>
-                    <div class="col">
-                        <textarea class="form-control" placeholder="e.g please make sure that you revise using this revision table"
-                            id="subjectContent" >When you are revising, please make sure you make a revision timetable</textarea>
+                    <label for="subjectContent" class="col-sm-3 col-form-label fw-bold fs-3">Content</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <!-- Content form field-->
+                        <textarea class="form-control"
+                            placeholder="e.g please make sure that you revise using this revision table"
+                            id="subjectContent"
+                            name="Subject Content">When you are revising, please make sure you make a revision timetable</textarea>
                     </div>
                 </div>
+                <!-- form field for time-->
                 <div class="row mb-3">
-                    <label for="SelectTimeAndDate" class="col-sm-2 col-form-label">Time and Date</label>
-                    <div class="col">
-                        <input type="time" class="form-control" id="SelectTimeAndDate" aria-label="Time" value="13:00">
-                    </div>
-                    <div class="col">
-                        <input type="date" class="form-control" id="SelectTimeAndDate" aria-label="Date" value="2026-07-07">
+                    <label for="SelectTime" class="col-sm-3 col-form-label fw-bold fs-3">Time</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <input type="time" class="form-control" id="SelectTime" aria-label="Time" value="13:00"
+                            name="Time">
                     </div>
                 </div>
+
+                <!-- form fields for date-->
                 <div class="row mb-3">
-                    <label for="SelectAttachment" class="col-sm-2 col-form-label">Attachment</label>
-                    <div class="col">
+                    <label for="SelectDate" class="col-sm-3 col-form-label fw-bold fs-3">Date</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <input type="date" class="form-control" id="SelectDate" aria-label="Date"
+                        value="2026-07-07" name="Date">
+                    </div>
+                </div>
+
+                <div class="row mb-3 align-items-end">
+                    <label for="SelectAttachment" class="col-sm-3 col-form-label fw-bold fs-3">Attachment</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <!-- Form field for attachment-->
                         <input class="form-control" type="file" id="SelectAttachment" aria-label="attachment">
-                        <span class="form-text" value="Revision timetable">
+                        <span class="form-text fs-5 fw-bold">
                             (Optional)
                         </span>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="SelectPriority" class="col-sm-2 col-form-label">Priority</label>
-                    <div class="col">
-                        <select id="SelectPriority" class="form-select" aria-label="Priority Selector">
-                            <option selected>Select Priority</option>
-                            <option value="1">High</option>
-                            <option value="2">Normal</option>
-                            <option value="3" selected>Low</option>
+                    <label for="SelectPriority" class="col-sm-3 col-form-label fw-bold fs-3">Priority</label>
+                    <div class="col-lg-8 col-sm-9">
+                        <!-- form field for selecting priority-->
+                        <select id="SelectPriority" class="form-select" aria-label="Priority Selector" name="Priority">
+                            <option value="Select Priority">Select Priority</option>
+                            <option value="High">High</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Low" selected>Low</option>
                         </select>
-                        <span class="form-text">
+                        <span class="form-text fs- fw-bold fs-5">
                             (High/Normal/Low)
                         </span>
                         <div class="row">
-                    <div class="col p-2">
-                        <button type="button" class="submit btn btn-primary">Submit Announcment</button>
+                            <div class="col p-2">
+                                <button type="submit" class="submit btn btn-primary" aria-label="Submit announcement button">Submit Announcment</button>
+                            </div>
+                        </div>
                     </div>
+                </div>
             </form>
         </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <!-- EduMax footer-->
+            <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                    <h2>2026 EduMax Admin View</h2>
+                </div>
+                <div class="col-4 d-flex align-items-center justify-content-center">
+                    <img src="EduMax_logo.png" alt="EduMax logo" class="footer-image img-fluid p-2" aria-label="EduMax logo image">
+                </div>
+                <div class="col d-flex  align-items-center justify-content-end EduMax">
+                    <!-- copyright notice -->
+                    <h1 class="EduMax">&copy; EduMax 2024</h1>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
